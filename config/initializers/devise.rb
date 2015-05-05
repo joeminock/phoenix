@@ -234,6 +234,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
+  require 'omniauth-google-oauth2'
+  config.omniauth :google_oauth2, '237045918597-vqcvm4hqqk8nln2gr8a5it0e1v3r272d.apps.googleusercontent.com', 'MjFuhEoGW3yuYJRS2lgRiQNt', {access_type: "offline", approval_prompt: ""}
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
