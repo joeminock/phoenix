@@ -34,6 +34,9 @@ gem 'devise', '~> 3.4.1'
 #Another new gem
 gem 'toastr-rails'
 
+#mandrill app
+gem 'mandrill-api', require: 'mandrill'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
