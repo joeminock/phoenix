@@ -240,6 +240,9 @@ Devise.setup do |config|
   require 'omniauth-facebook'
   config.omniauth :facebook, '1586038344981499', 'dd210a01a4d4d6e96d7334e7ce39f258'
 
+  require 'omniauth-github'
+  config.omniauth :github, 'ca736114401cd94289d5', '456d7a372052517d606fecc7a9f5eaf9f7870edd', scope: "user:email"
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
