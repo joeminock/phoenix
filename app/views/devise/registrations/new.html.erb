@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col m6 offset-m3 center">
     
-<h5>Sign up</h5>
+<h5>Create Your Free Account</h5>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render partial: "shared/devisemes" %>
@@ -21,7 +21,9 @@
       <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up</button>
     <% end %>
 
-    <br /><br />
+    <p class="line">
+      <span>OR</span>
+    </p>
 
       <%= link_to "Sign up with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn red darken-1" %>
 
@@ -33,5 +35,9 @@
 
     <%= link_to "Sign up with Github", user_omniauth_authorize_path(:github), class: "btn grey darken-2" %>
 
+    <p class="line">
+         Already a Member? <a class="note" href="/login">Login</a>
+    </p>
+   
   </div>
 </div>
