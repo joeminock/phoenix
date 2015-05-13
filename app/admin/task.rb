@@ -12,7 +12,7 @@ ActiveAdmin.register Task do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-	permit_params :title, :note, :video, :header, :tag, :project_id
+	permit_params :tag, :title, :note, :video, :header, :project_id
 
 
 end

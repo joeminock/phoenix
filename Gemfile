@@ -46,12 +46,17 @@ gem 'omniauth-github'
 #activeadmin
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
+gem 'activeadmin-sortable'
 
 #paperclip
 gem 'paperclip', '~> 4.2.1'
 
 #Friendly id - clean URLS
 gem 'friendly_id'
+
+#markdown
+gem 'redcarpet', '~> 3.2.3'
+gem 'coderay', '~> 1.1.0' 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

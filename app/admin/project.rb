@@ -13,7 +13,7 @@ ActiveAdmin.register Project do
 #   permitted
 # end
 	
-	permit_params :name, :content, :price
+	permit_params :name, :content, :price, :image
 
 	show do |t|
 		attributes_table do
