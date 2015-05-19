@@ -46,7 +46,6 @@ gem 'omniauth-github'
 #activeadmin
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
-gem 'activeadmin-sortable'
 
 #paperclip
 gem 'paperclip', '~> 4.2.1'
