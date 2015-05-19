@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
 
+  has_many :subscriptions
+  has_many :projects, through: :subscriptions
+
   
 
   validates :name, presence: true, length: {maximum: 25}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513195503) do
+ActiveRecord::Schema.define(version: 20150519211402) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -71,6 +71,17 @@ ActiveRecord::Schema.define(version: 20150513195503) do
     t.datetime "image_updated_at"
     t.string   "slug"
   end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subscriptions", ["project_id", "user_id"], name: "index_subscriptions_on_project_id_and_user_id", unique: true
+  add_index "subscriptions", ["project_id"], name: "index_subscriptions_on_project_id"
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
 
   create_table "tasks", force: :cascade do |t|
     t.string   "title"
