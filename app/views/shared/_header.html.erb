@@ -24,7 +24,7 @@
 			      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
 			      <ul class="right hide-on-med-and-down">
-			        <li><a href="#">Projects</a></li>
+			        <li><%= link_to "Projects", root_path %></li>
 			        <!-- Conditional Statement for new / returning user vs logged in user -->
 			        <% if (!user_signed_in?) %>
 			        <li><%= link_to "Create Free Account", new_user_registration_path %></li>
