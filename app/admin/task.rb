@@ -14,5 +14,24 @@ ActiveAdmin.register Task do
 # end
 	permit_params :tag, :title, :note, :video, :header, :project_id
 
+	sortable tree: false,
+			 sorting_attribute: :tag
+
+	index :as => :sortable do
+		label :title
+
+		actions
+	end
+
+	index do
+		selectable_column
+		column :header
+		column :title
+		column :tag
+		column :project
+
+		actions
+	end
+
 
 end
