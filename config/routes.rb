@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/privacy'
   get 'pages/terms'
+  get '/myprojects' => 'project#list'
   post '/free' => 'charge#free'
   
   root 'project#index'

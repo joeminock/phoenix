@@ -6,5 +6,6 @@ class TaskController < ApplicationController
 
   	@next_task = @task.next
   	@prev_task = @task.prev
+
   end
 end
