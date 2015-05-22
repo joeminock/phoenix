@@ -1,18 +1,19 @@
+<br />
+<h5>Project Name To Go Here - <%= @task.title %></h5>
+<hr>
 <div class="row" data-no-turbolink>
 	<div class="col m4">
 		<div class="card z-depth-2">
 			<div class="card-content">
-				<h5>Project Name To Go Here</h5>
- 							
 				<div class="collection">
 					<% @tasks.each do |task| %>
 						<% if task.header %>
 							<div class="collection-item active">
-								<i class="mdi-social-school"> <%= task.title %></i>
+								<i class="mdi-social-school">  <%= task.title %></i>
 							</div>
 						  <% else %>
 						  	<%= link_to [task.project, task], class: "collection-item" do %>
-						  		<%= task.title %>
+						  		<i class="mdi-av-play-circle-outline">  <%= task.title %></i>
 						  	<% end %>
 						<% end %>
 					<% end %>
@@ -23,14 +24,6 @@
 
 	<div class="col m8">
 		<div class="card z-depth-2">
-			<div class="row">
-				<div class="card-content">
-					<div class="col m6 l12">
-						<h5>Current Task: <%= @task.title %></h5>
-					</div>
-				</div>
-			</div>
-
 			<div id="wistia_<%= @task.video %>"></div>
 			
 			<div class="card-action grey-text text-darken-4 center">
@@ -41,24 +34,27 @@
               	<button class="btn btn-primary" onclick="setPlaySpeed(1.5)">1.5x</button>
               	<button class="btn btn-primary" onclick="setPlaySpeed(2)">2x</button>
 			</div>
+			<hr>
 			<div class="row">
-				<div class="col m6">
-					<% if !@prev_task.nil? %>
-						<%= link_to "< Previous Task", [@prev_task.project, @prev_task], class: "btn btn-primary"  %>
-					<% else %>
-						&nbsp;
-					<% end %>
-				</div>
+				<div class="container">
+					<div class="col m6">
+						
+						<% if !@prev_task.nil? %>
+							<%= link_to "< Previous Task", [@prev_task.project, @prev_task], class: "btn btn-primary"  %>
+						<% else %>
+							&nbsp;
+						<% end %>
+					</div>
 
-				<div class="col m6">
-					<% if !@next_task.nil? %>
-						<span class="right">
-						<%= link_to "Next Task >", [@next_task.project, @next_task], class: "btn btn-primary"  %>
-						</span>
-					<% end %>
+					<div class="col m6">
+						<% if !@next_task.nil? %>
+							<span class="right">
+							<%= link_to "Next Task >", [@next_task.project, @next_task], class: "btn btn-primary"  %>
+							</span>
+						<% end %>
+					</div>
 				</div>
 			</div>
-
 		</div>
 		<div class="card z-depth-2">
 			<div class="row">
