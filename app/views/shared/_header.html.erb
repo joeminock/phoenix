@@ -17,13 +17,14 @@
 		<nav class="teal lighten-2 z-depth-1">
 			<div class="container">
 			    <div class="nav-wrapper">
-			      <a class="navbar-brand" href="/"><img alt="Startbox" class="header-logo" src="/assets/startbox_logo.png"></a>
+			      <a class="navbar-brand" href="/pages/intro"><img alt="Startbox" class="header-logo" src="/assets/startbox_logo.png"></a>
 
-			      <!--<%= link_to "Startbox", root_path, :class => "brand-logo" %>-->
+			      <!--<%= link_to "Startbox", pages_intro_path, :class => "brand-logo" %>-->
 			      
 			      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
 			      <ul class="right hide-on-med-and-down">
+			        <li><%= link_to "Intro", pages_intro_path %></li>
 			        <li><%= link_to "Projects", root_path %></li>
 			        <!-- Conditional Statement for new / returning user vs logged in user -->
 			        <% if (!user_signed_in?) %>

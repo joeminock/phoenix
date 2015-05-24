@@ -12,7 +12,7 @@ ActiveAdmin.register Task do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-	permit_params :tag, :title, :note, :video, :header, :project_id
+	permit_params :tag, :title, :description, :note, :video, :header, :project_id
 
 	sortable tree: false,
 			 sorting_attribute: :tag
@@ -32,6 +32,4 @@ ActiveAdmin.register Task do
 
 		actions
 	end
-
-
 end
