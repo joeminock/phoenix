@@ -4,87 +4,122 @@
 <div class="row">
 	<div class="col l4 m6 s12">
 		<% if !@joined %>
-		<div class="card z-depth 2">
+			<div class="card z-depth 2">
 
-			<div class="card-action center teal-text darken-3">
-				<h5>Project Price</h5>
-				<h2><%= @project.price == 0? "Free!" : "$#{@project.price}" %></h2>
-			</div>
-			<div class="card-action center">
+				<div class="card-action center teal-text darken-3">
+					<h5>Project Price</h5>
+					<h2><%= @project.price == 0? "Free!" : "$#{@project.price}" %></h2>
+				</div>
+				<div class="card-action center">
 
-				<% if user_signed_in? %>
-					<%= form_tag free_path do %>
-						<%= hidden_field_tag 'project_id', @project.id %>
-						<button type="submit" class="btn waves-effect waves-light green lighten-2">Get Started!</button>
+					<% if user_signed_in? %>
+						
+						<% if @project.price == 0 %>
+							<%= form_tag free_path do %>
+								<%= hidden_field_tag 'project_id', @project.id %>
+								<button type="submit" class="btn waves-effect waves-light green lighten-2">Get Started!</button>
+							<% end %>
+						<% else %>
+							<%= form_tag pay_path, id:'chargeForm' do %>
+								<script src="https://checkout.stripe.com/checkout.js"></script>
+								<%= hidden_field_tag 'stripeToken' %>
+								<%= hidden_field_tag 'stripeEmail' %>
+								<%= hidden_field_tag 'project_id', @project.id %>
+
+								<button id="customButton" type="button" class="btn waves-effect waves-light green lighten-2">Get Started!</button><br />
+
+								<script>
+								  var handler = StripeCheckout.configure({
+								    key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+								    token: function(token, arg) {
+								      $('#stripeToken').val(token.id);
+								      $('#stripeEmail').val(token.email);
+								      $('#chargeForm').submit();
+								    }
+								  });
+
+								  $('#customButton').on('click', function(e) {
+								    handler.open({
+								      name: 'Startbox',
+								      description: '<%= @project.name %>',
+								      amount: '<%= @project.price_in_cents %>',
+								      email: '<%= current_user.email %>'
+								    });
+								    e.preventDefault();
+								  });
+								</script>
+							<% end %>
+
+						<% end %>
+
+					<% else	%>
+						<%= link_to new_user_session_path do %>
+							<button type="submit" class="btn waves-effect waves-light green lighten-2">Get Started!</button>
+						<% end %>
 					<% end %>
-				<% else	%>
-					<%= link_to new_user_session_path do %>
-						<button type="submit" class="btn waves-effect waves-light green lighten-2">Get Started!</button>
-					<% end %>
-				<% end %>
 
+				</div>
 			</div>
-		</div>
-		<div class="card z-depth 2">
-			<div class="card-content teal-text darken-3">
-				<h5><i class="mdi-editor-insert-emoticon"></i> Join 200 Students!</h5>
-				<ul class="collection">
-			      <li class="collection-item">Difficulty Level: <%= @project.ability %></li>
-			      <li class="collection-item">Time to Complete: <%= @project.time_to_complete %></li>
-			    </ul>
+			<div class="card z-depth 2">
+				<div class="card-content teal-text darken-3">
+					<h5><i class="mdi-editor-insert-emoticon"></i> Join 200 Students!</h5>
+					<ul class="collection">
+				      <li class="collection-item">Difficulty Level: <%= @project.ability %></li>
+				      <li class="collection-item">Time to Complete: <%= @project.time_to_complete %></li>
+				    </ul>
 
+				</div>
 			</div>
-		</div>
-		<div class="card z-depth 2">
-			<div class="card-action teal-text">
-				<h5>Early Adopter Advantage...</h5>
-				<ul class="collection">
-			      <li class="collection-item"><i class="mdi-action-autorenew"></i>Lifetime Project Access</li>
-			      <li class="collection-item"><i class="mdi-hardware-phonelink"></i> View on All Devices</li>
-			      <li class="collection-item"><i class="mdi-communication-forum"></i> Unlimited Forum Support</li>
-			    </ul>
+			<div class="card z-depth 2">
+				<div class="card-action teal-text">
+					<h5>Early Adopter Advantage...</h5>
+					<ul class="collection">
+				      <li class="collection-item"><i class="mdi-action-autorenew"></i>Lifetime Project Access</li>
+				      <li class="collection-item"><i class="mdi-hardware-phonelink"></i> View on All Devices</li>
+				      <li class="collection-item"><i class="mdi-communication-forum"></i> Unlimited Forum Support</li>
+				    </ul>
+				</div>
 			</div>
-		</div>
 
 		<% else %>
 
-		<div class="card z-depth 2">
-			<div class="card-action teal-text darken-3 center">
-				<%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-medium" %><br />
-				<h5>Hi, <%= current_user.name %></h5>
+			<div class="card z-depth 2">
+				<div class="card-action teal-text darken-3 center">
+					<%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-medium" %><br />
+					<h5>Hi, <%= current_user.name %></h5>
+				</div>
+				<div class="card-content teal-text">
+					<ul class="collection with-header">
+				      <li class="collection-header center"><h6>Startbox Stats</h6></li>
+				       <li class="collection-item">Skill Level:  <i class="mdi-image-filter-1"></i>  <i class="mdi-image-filter-none">  </i><i class="mdi-image-filter-none">  </i> <i class="mdi-image-filter-none">  </i> <i class="mdi-image-filter-none"> </i></li>
+				      <li class="collection-item"><i class="mdi-action-thumb-up"></i>  #15 of 200 Doing This Project!</li>
+				      <li class="collection-item"><i class="mdi-action-grade"></i>  First 1000 Active Users!</li>
+				    </ul>
+				</div>
 			</div>
-			<div class="card-content teal-text">
-				<ul class="collection with-header">
-			      <li class="collection-header center"><h6>Startbox Stats</h6></li>
-			       <li class="collection-item">Skill Level:  <i class="mdi-image-filter-1"></i>  <i class="mdi-image-filter-none">  </i><i class="mdi-image-filter-none">  </i> <i class="mdi-image-filter-none">  </i> <i class="mdi-image-filter-none"> </i></li>
-			      <li class="collection-item"><i class="mdi-action-thumb-up"></i>  #15 of 200 Doing This Project!</li>
-			      <li class="collection-item"><i class="mdi-action-grade"></i>  First 1000 Active Users!</li>
-			    </ul>
+			<div class="card z-depth 2">
+				<div class="card-content teal-text">
+					<h5>You Are An Early Adopter</h5>
+					<ul class="collection">
+				      <li class="collection-item"><i class="mdi-action-autorenew"></i>  Lifetime Project Access</li>
+				      <li class="collection-item"><i class="mdi-hardware-phonelink"></i>  View on All Devices</li>
+				      <li class="collection-item"><i class="mdi-communication-forum"></i>  Unlimited Forum Support</li>
+				    </ul>
+				</div>
 			</div>
-		</div>
-		<div class="card z-depth 2">
-			<div class="card-content teal-text">
-				<h5>You Are An Early Adopter</h5>
-				<ul class="collection">
-			      <li class="collection-item"><i class="mdi-action-autorenew"></i>  Lifetime Project Access</li>
-			      <li class="collection-item"><i class="mdi-hardware-phonelink"></i>  View on All Devices</li>
-			      <li class="collection-item"><i class="mdi-communication-forum"></i>  Unlimited Forum Support</li>
-			    </ul>
+			<div class="card z-depth 2">
+				<div class="card-action teal-text darken-3 center">
+					<h5>Student List</h5>
+				</div>
+				<div class="card-action teal-text">
+					<% @users.each do |u| %>
+						<span class="valign-wrapper">
+						<%= image_tag avatar_url(u), class: "responsive-img avatar-small" %>&nbsp;
+						<%= u.name %>
+						</span><br />
+					<% end %>
+				</div>
 			</div>
-		</div>
-		<div class="card z-depth 2">
-			<div class="card-action teal-text darken-3 center">
-				<h5>Student List</h5>
-			</div>
-			<div class="card-action teal-text">
-				<% @users.each do |u| %>
-					<span class="valign-wrapper">
-					<%= image_tag avatar_url(u), class: "responsive-img avatar-small" %>&nbsp;
-					<%= u.name %>
-					</span><br />
-				<% end %>
-			</div>
-		</div>
 		<% end %>
 	</div>
 
@@ -119,8 +154,7 @@
 			    <div id="reviews" class="col s12">
 			    	<div class="card-content">
 						<h5>Reviews</h5>
-						<span id="average_rating" %></span>
-						<p> <%= @reviews.count %> <%= @reviews.count >1? "Reviews" : "Review" %></p>
+						
 				
 						<div><%= render 'reviews/form' if @joined && !@hasReview %></div>
 						<div><%= render 'reviews/index' %></div>
