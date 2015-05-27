@@ -138,9 +138,14 @@
 			        <li class="tab col s3"><a href="#discussions">Discussion</a></li>
 			      </ul>
 			    </div>
+			</div>
+		</div>
 
-	<!-- ABOUT SECTION DIV-->
-			    <div id="about" class="col s12">
+
+	<!-- ABOUT SECTION DIV-->		
+		<div id="about">
+			<div class="card z-depth 2">
+				<div class="row">
 			    	<div class="card-content">
 					<h5><%= @project.name %></h5>
 					<span id="average_rating" %></span>
@@ -149,9 +154,13 @@
 					<%= @project.content %>
 					</div>
 			    </div>
+			</div>
+		</div>
 			    
 	<!-- REVIEWS SECTION DIV-->
-			    <div id="reviews" class="col s12">
+		<div id="reviews">
+			<div class="card z-depth 2">
+				<div class="row">
 			    	<div class="card-content">
 						<h5>Reviews</h5>
 						
@@ -160,13 +169,17 @@
 						<div><%= render 'reviews/index' %></div>
 					</div>
 			    </div>
+			</div>
+		</div>
 
 	<!-- TASKS SECTION DIV-->
-			    <div id="tasks" class="col s12">
+		<div id="tasks">
+			<div class="card z-depth 2">
+				<div class="row">
 			    	<div class="card-content">
 			    	<h5>Project Tasks</h5>
 			    	</div>
-			    	<div class="col s12">
+			  
 			    	<div class="collection" data-no-turbolink>
 					<% @tasks.each do |task| %>
 						<% if task.header %>
@@ -180,10 +193,14 @@
 						<% end %>
 					<% end %>
 					</div>
-					</div>
 				</div>
+			</div>
+		</div>
+
 	<!-- DISCUSSION SECTION DIV-->
-			    <div id="discussions" class="col s12">
+		<div id="discussions">
+			<div class="card z-depth 2">
+				<div class="row">
 			    	<div class="card-content">
 			    	<H5>Discussions Will Go Here</H5>
 			    	</div>
