@@ -93,15 +93,47 @@
 			<div class="card-image">
 				<%= image_tag @project.image %>
 			</div>
-			<div class="card-content">
-				<h5><%= @project.name %></h5>
-				<span id="average_rating" %></span>
-				<p> <%= @reviews.count %> <%= @reviews.count >1? "Reviews" : "Review" %></p>
-				<hr>
-				<%= @project.content %>
-	
 
-				<div class="collection" data-no-turbolink>
+			<div class="row">
+			    <div class="col s12">
+			      <ul class="tabs ">
+			        <li class="tab col s3"><a class="active" href="#about">About</a></li>
+			        <li class="tab col s3"><a href="#reviews">Reviews</a></li>
+			        <li class="tab col s3"><a href="#tasks">Project Tasks</a></li>
+			        <li class="tab col s3"><a href="#discussions">Discussion</a></li>
+			      </ul>
+			    </div>
+
+	<!-- ABOUT SECTION DIV-->
+			    <div id="about" class="col s12">
+			    	<div class="card-content">
+					<h5><%= @project.name %></h5>
+					<span id="average_rating" %></span>
+					<p> <%= @reviews.count %> <%= @reviews.count >1? "Reviews" : "Review" %></p>
+					<hr>
+					<%= @project.content %>
+					</div>
+			    </div>
+			    
+	<!-- REVIEWS SECTION DIV-->
+			    <div id="reviews" class="col s12">
+			    	<div class="card-content">
+						<h5>Reviews</h5>
+						<span id="average_rating" %></span>
+						<p> <%= @reviews.count %> <%= @reviews.count >1? "Reviews" : "Review" %></p>
+				
+						<div><%= render 'reviews/form' if @joined && !@hasReview %></div>
+						<div><%= render 'reviews/index' %></div>
+					</div>
+			    </div>
+
+	<!-- TASKS SECTION DIV-->
+			    <div id="tasks" class="col s12">
+			    	<div class="card-content">
+			    	<h5>Project Tasks</h5>
+			    	</div>
+			    	<div class="col s12">
+			    	<div class="collection" data-no-turbolink>
 					<% @tasks.each do |task| %>
 						<% if task.header %>
 							<div class="collection-item active">
@@ -113,15 +145,16 @@
 							<% end %>
 						<% end %>
 					<% end %>
+					</div>
+					</div>
 				</div>
-
-			</div>
-			<div class="card-content">
-				<h5>Reviews</h5>
-				<div><%= render 'reviews/form' if @joined && !@hasReview %></div>
-				<div><%= render 'reviews/index' %></div>
-
-			</div>
+	<!-- DISCUSSION SECTION DIV-->
+			    <div id="discussions" class="col s12">
+			    	<div class="card-content">
+			    	<H5>Discussions Will Go Here</H5>
+			    	</div>
+			    </div>
+  			</div>	
 		</div>
 	</div>
 </div>

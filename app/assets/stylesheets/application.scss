@@ -53,3 +53,18 @@ body {
     border-radius: 2px;
     background-clip: padding-box;
   }
+
+  .tabs .tab a {
+  color: #13A89E;
+  display: block;
+  width: 100%;
+  height: 100%;
+  }
+
+  .tabs .indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #13A89E;
+  will-change: left, right;
+  }
