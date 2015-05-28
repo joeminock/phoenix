@@ -66,6 +66,7 @@
 					<ul class="collection">
 				      <li class="collection-item">Difficulty Level: <%= @project.ability %></li>
 				      <li class="collection-item">Time to Complete: <%= @project.time_to_complete %></li>
+				      <li class="collection-item">Supplies Cost: <%= @project.supplies_cost %></li>
 				    </ul>
 
 				</div>
@@ -148,7 +149,7 @@
 				<div class="row">
 			    	<div class="card-content">
 					<h5><%= @project.name %></h5>
-					<span id="average_rating" %></span>
+					<span id="average_rating"></span>
 					<p> <%= @reviews.count %> <%= @reviews.count >1? "Reviews" : "Review" %></p>
 					<hr>
 					<%= @project.content %>
@@ -173,29 +174,61 @@
 		</div>
 
 	<!-- TASKS SECTION DIV-->
-		<div id="tasks">
-			<div class="card z-depth 2">
-				<div class="row">
-			    	<div class="card-content">
-			    	<h5>Project Tasks</h5>
-			    	</div>
-			  
-			    	<div class="collection" data-no-turbolink>
-					<% @tasks.each do |task| %>
-						<% if task.header %>
-							<div class="collection-item active">
-								<i class="mdi-social-school"> <%= task.title %></i>
+		<% if !@joined %>
+			<div id="tasks">
+				<div class="card z-depth 2">
+					<div class="row">
+				    	<div class="card-content">
+				    	<h5>Project Tasks</h5>
+				    	<p>Click Get Started to View Task Videos!</p>
+				    	</div>
+				  		<div class="col s12">
+					    	<div class="collection" data-no-turbolink>
+								<% @tasks.each do |task| %>
+									<% if task.header %>
+										<div class="collection-item active">
+											<i class="mdi-social-school">  <%= task.title %></i>
+										</div>
+									  <% else %>
+										<div class="collection-item">
+											<i class="mdi-action-lock-outline">  <%= task.title %></i>
+										</div>
+										
+									<% end %>
+								<% end %>
 							</div>
-						  <% else %>
-							<%= link_to [task.project, task], class: "collection-item" do %>
-								<%= task.title %>
-							<% end %>
-						<% end %>
-					<% end %>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+
+		<% else %>
+
+			<div id="tasks">
+				<div class="card z-depth 2">
+					<div class="row">
+				    	<div class="card-content">
+				    	<h5>Project Tasks</h5>
+				    	</div>
+				  		<div class="col s12">
+					    	<div class="collection" data-no-turbolink>
+								<% @tasks.each do |task| %>
+									<% if task.header %>
+										<div class="collection-item active">
+											<i class="mdi-social-school">  <%= task.title %></i>
+										</div>
+									  <% else %>
+										<%= link_to [task.project, task], class: "collection-item" do %>
+											<i class="mdi-av-play-circle-outline">  <%= task.title %></i>
+										<% end %>
+									<% end %>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
 
 	<!-- DISCUSSION SECTION DIV-->
 		<div id="discussions">
@@ -211,9 +244,9 @@
 </div>
 
 <script>
-		$('#average_rating').raty({
-			path: '/assets',
-			readOnly: true,
-			score: <%= @project.average_rating %>
-		});
-	</script>
+	$('#average_rating').raty({
+		path: '/assets',
+		readOnly: true,
+		score: <%= @project.average_rating %>
+	});
+</script>
