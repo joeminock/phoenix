@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
-		<!-- SumoMe -->
-		<script src="//load.sumome.com/" data-sumo-site-id="2d7e6a792d85e39df9aae774cf91aef91afd56b1ffd1814d193a897cf94d6ccc" async="async"></script>
-		<!-- SumoMe -->
-
-	 	<title>Get Startbox... How-To Videos and Kits for Honey Dos and Home Projects</title>
-
 	 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +11,26 @@
 		  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		  <%= csrf_meta_tags %>
+
+		  <%= yield :head %>
+
+		<!-- SumoMe -->
+		<script src="//load.sumome.com/" data-sumo-site-id="2d7e6a792d85e39df9aae774cf91aef91afd56b1ffd1814d193a897cf94d6ccc" async="async"></script>
+		<!-- SumoMe -->
+
+		<!-- Google Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-63655417-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+		<!-- Google Analytics End -->
+
 	</head>
 
 	<body>

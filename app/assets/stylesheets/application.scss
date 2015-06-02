@@ -68,3 +68,11 @@ body {
   background-color: #13A89E;
   will-change: left, right;
   }
+
+  p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  }
