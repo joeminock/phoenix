@@ -61,6 +61,9 @@ gem 'coderay', '~> 1.1.0'
 #Stripe Checkout
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+#Figaro
+gem 'figaro', '~> 1.1.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

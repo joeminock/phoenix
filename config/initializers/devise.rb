@@ -235,13 +235,13 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   require 'omniauth-google-oauth2'
-  config.omniauth :google_oauth2, '237045918597-vqcvm4hqqk8nln2gr8a5it0e1v3r272d.apps.googleusercontent.com', 'MjFuhEoGW3yuYJRS2lgRiQNt', {access_type: "offline", approval_prompt: ""}
+  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_APP_SECRET'], {access_type: "offline", approval_prompt: ""}
 
   require 'omniauth-facebook'
-  config.omniauth :facebook, '1586038344981499', 'dd210a01a4d4d6e96d7334e7ce39f258'
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
 
   require 'omniauth-github'
-  config.omniauth :github, 'ca736114401cd94289d5', '456d7a372052517d606fecc7a9f5eaf9f7870edd', scope: "user:email"
+  config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET'], scope: "user:email"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
