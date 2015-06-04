@@ -5,15 +5,19 @@ Rails.application.routes.draw do
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
               :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
 
+  
+  root 'project#index'
+
+  get 'pages/intro'
   get 'pages/about'
   get 'pages/privacy'
   get 'pages/terms'
-  get 'pages/intro'
+  get 'pages/copyright'
   get '/myprojects' => 'project#list'
   post '/free' => 'charge#free'
   post '/pay' => 'charge#pay'
   
-  root 'project#index'
+  
 
   resources :project do
     resources :task, only: [:show]
