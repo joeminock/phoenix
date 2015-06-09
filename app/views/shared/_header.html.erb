@@ -1,31 +1,48 @@
 <header>
 		<!-- Dropdown Structure -->
-		<ul id="dropdown1" class="dropdown-content mask">
+		<ul id="profile-dropdown1" class="dropdown-content mask">
 		  <li><%= link_to "My Profile", edit_user_registration_path %></li>
 		  <li><%= link_to "My Projects", myprojects_path %></li>
 		  <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
 		</ul>
 
 		<!-- Dropdown Structure -->
-		<ul id="dropdown2" class="dropdown-content mask">
+		<ul id="profile-dropdown2" class="dropdown-content mask">
 		  <li><%= link_to "My Profile", edit_user_registration_path %></li>
 		  <li><%= link_to "My Projects", myprojects_path %></li>
 		  <li class="divider"></li>
 		  <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
 		</ul>
+
+		<!-- Dropdown Structure -->
+		<ul id="projects-dropdown1" class="dropdown-content mask">
+		  <li><%= link_to "All Projects", project_index_path %></li>
+		  <li><a href="#">Kids and Crafts</a></li>
+		  <li><a href="#">Create for Home</a></li>
+		  <li><a href="#">Honey Do How-To's</a></li>
+		</ul>
+
+		<!-- Dropdown Structure -->
+		<ul id="projects-dropdown2" class="dropdown-content mask">
+		  <li><%= link_to "All Projects", project_index_path %></li>
+		  <li><a href="#">Kids and Crafts</a></li>
+		  <li><a href="#">Create for Home</a></li>
+		  <li><a href="#">Honey Do How-To's</a></li>
+		</ul>
 	<div class="navbar-fixed">
 		<nav class="teal lighten-2 z-depth-1">
 			<div class="container">
 			    <div class="nav-wrapper">
-			      <a class="navbar-brand" href="/pages/intro"><img alt="Startbox" class="header-logo" src="/assets/startbox_logo.png"></a>
+			      <a class="navbar-brand" href="/"><img alt="Startbox" class="header-logo" src="/assets/startbox_logo.png"></a>
 
-			      <!--<%= link_to "Startbox", pages_intro_path, :class => "brand-logo" %>-->
+			      <!--<%= link_to "Startbox", root_path, :class => "brand-logo" %>-->
 			      
 			      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 
-			      <ul class="right hide-on-med-and-down">
-			        <li><%= link_to "Intro", pages_intro_path %></li>
-			        <li><%= link_to "Projects", root_path %></li>
+			      <ul class="right hide-on-med-and-down" style="width: 450px;">
+			        <li><%= link_to "Intro", root_path %></li>
+			        <li><a class="dropdown-button valign-wrapper" href="#!" data-beloworigin="true" data-activates="projects-dropdown1">
+			        	Projects <i class="mdi-navigation-arrow-drop-down right"></i></li>
 			        <!-- Conditional Statement for new / returning user vs logged in user -->
 			        <% if (!user_signed_in?) %>
 			        <li><%= link_to "Create Free Account", new_user_registration_path %></li>
@@ -33,7 +50,7 @@
 			        <li><%= link_to "Login", new_user_session_path %></li>
 			        <% else %>
 			        <!-- Dropdown Trigger -->
-				    <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown1">
+				    <li><a class="dropdown-button valign-wrapper" href="#!" data-beloworigin="true" data-activates="profile-dropdown1">
 				    	<%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-small" %>&nbsp;
 				    	<%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i>
 				    </a></li>
@@ -41,14 +58,13 @@
 			      </ul>
 
 			      <ul class="side-nav" id="mobile-demo">
-			        <li><a href="#">Projects</a></li>
+			        <li><a href="/projects">Projects</a></li>
 			        <% if (!user_signed_in?) %>
 			        <li><%= link_to "Create Free Account", new_user_registration_path %></li>
 			        <li><%= link_to "Login", new_user_session_path %></li>
 			        <% else %>
 			        <!-- Dropdown Trigger -->
-				    <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown2">
-				    	<%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-small" %>&nbsp;
+				    <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="profile-dropdown2">
 				    	<%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i>
 				    </a></li>
 				    <% end %>
@@ -59,3 +75,15 @@
 		</nav>
 	</div>
 </header>
+
+<script>
+	$('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false // Displays dropdown below the button
+    }
+  );
+</script>

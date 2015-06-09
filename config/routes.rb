@@ -5,14 +5,14 @@ Rails.application.routes.draw do
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
               :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
 
-  
-  root 'project#index'
+  #Default Page
+  root 'pages#intro'
 
-  get 'pages/intro'
   get 'pages/about'
   get 'pages/privacy'
   get 'pages/terms'
   get 'pages/copyright'
+  get '/projects' => 'project#index'
   get '/myprojects' => 'project#list'
   post '/free' => 'charge#free'
   post '/pay' => 'charge#pay'

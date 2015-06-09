@@ -2,8 +2,9 @@ class ProjectController < ApplicationController
   
   before_action :authenticate_user!, only: [:list]
 
+  #Randomized Index of all projects
   def index
-  	@projects = Project.all
+  	@projects = Project.all.shuffle
   end
 
   def show
