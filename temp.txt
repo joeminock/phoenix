@@ -1,0 +1,317 @@
+commit d0cca0db5cee343405ad2d2ecf1df8e07e2f3eaf
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue Jun 9 08:31:25 2015 -0400
+
+    Update intro page. Added "projects" section.
+
+commit a9bc6b6c0533a62228f5363bc220ea47f8c15cb8
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Thu Jun 4 10:55:54 2015 -0400
+
+    added copyright page, route, controller method. Updated SEO for head.
+
+commit e5e7f3b077ef082141f060a72bda37fb44d1d717
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue Jun 2 10:14:51 2015 -0400
+
+    Views Updates
+
+commit c42863e905f10743b5929a560cc47356096cd36c
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon Jun 1 21:35:27 2015 -0400
+
+    Added environmental variables
+
+commit 2ec92249135f9015056dd80689bf0a7b4d5b6f85
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon Jun 1 21:02:50 2015 -0400
+
+    Added Intro to pages controller.
+
+commit 0a943c9baa94683980acc67d96cdb94626f237bc
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Thu May 28 10:44:02 2015 -0400
+
+    Added Olark
+
+commit 98b44c13ca352d77305c41f66f206cc5796ad0bd
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 27 20:36:35 2015 -0400
+
+    Updated Project View to look for joined users. Removed link for non-joined, non-logged in users.
+
+commit 096d140e5035283f4c13ebd4962fafa6c0093f38
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 27 12:01:25 2015 -0400
+
+    Updates to Project - Show and Task Views.
+
+commit 72a8f756f117285f5b697f3866496de100c8bcc0
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 27 10:58:17 2015 -0400
+
+    Added Receipt Mailer.
+
+commit cc7a48fb58421ab212eab4ce0e02e944e768a2d5
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 27 10:12:15 2015 -0400
+
+    Added Stripe Payments.
+
+commit 5f2c612b596fb388da13970212db22bc3e22646d
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 26 21:17:31 2015 -0400
+
+    Fixed Fields in Task in Active Admin
+
+commit 35f5da48a08f3e9d29f65254f5aa96c0294966dd
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 26 21:05:55 2015 -0400
+
+    Added JQuery Tabs to Project Page
+
+commit eb3aa6bdf0dcd9da5faf86b1173f031dc70a23b6
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 26 19:36:33 2015 -0400
+
+    Added Reviews and Stars for Reviews.
+
+commit 8d045474559600915f088e7a32bbc0ed94dd4134
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 26 12:22:59 2015 -0400
+
+    Added break under task description.
+
+commit a3213bb6ee31d9f974ff1e36168cf966c72d24a0
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Sun May 24 11:41:32 2015 -0400
+
+    Added Ability and time to complete to projects, updated many views.
+
+commit 9f975e62ba767e9ce3ce5993496c7c74ac881b24
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Fri May 22 11:23:30 2015 -0400
+
+    Added About Us link to footer, continued UI updates to project-show view.
+
+commit 11e923ccf4425564f88b509a04d1f02671d2b9ca
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Fri May 22 07:06:40 2015 -0400
+
+    Updated Project view - logged in, non-logged in, new project registration.
+
+commit 1720d8da668dc7a8e9b84abd1fa0d858087724d5
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Thu May 21 08:24:12 2015 -0400
+
+    Updated project images
+
+commit 5ad0eb376b2e4cf45b0a16e21d3d388442c20fa2
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 20 18:34:47 2015 -0400
+
+    Remove Github authentication and login
+
+commit f1026f2f9883d8dc005c5f2902785cb7640a8511
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 20 15:39:13 2015 -0400
+
+    Updated Views, added test projects.
+
+commit 395ee7545ac5c6e60cf2f84f8cdcceb3a3f8a425
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 19 23:19:57 2015 -0400
+
+    Updated Task Page, Created My Project Page. Made updates to Project Page, UI / UX across site.
+
+commit eb4a49f15c0bb3844435e6c12a91e0e5ce9f11e3
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 19 18:32:35 2015 -0400
+
+    Created Subscriptions
+
+commit a1b1a37f1666fc9e68e64a9760b6b918aca9e6af
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 19 16:48:30 2015 -0400
+
+    Added Wistia Video API, Forward and Backward Buttons, removed Turbolinks from projects, tasks views
+
+commit 452cb4e08a81d188e44fc5876bc5ea262dfe9206
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 19 15:38:12 2015 -0400
+
+    Added Sortable Tasks, updated Task and Project Views.
+
+commit f447698bf57fa699da1a10d08050c4031712f435
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 19 14:16:31 2015 -0400
+
+    Updated Bin files.
+
+commit 84599447e79503f27d39dc2ce22cce859315af9d
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 19 10:16:46 2015 -0400
+
+    Removed ActiveAdmin-Sortable, Updated Project Controller, Project Index.
+
+commit 135a4fa415637dfb8c3a4854c8408f22120836fe
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Fri May 15 13:37:38 2015 -0400
+
+    Updated Project Page such that it is more responsive. Changed Call to Action to "Get Started".
+
+commit 040af34b9351ce6fe6aeba71aa24bd7a89d590e6
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 13 19:39:28 2015 -0400
+
+    Added Markdown for Tasks
+
+commit 827f7ae4241ff1ffd4c624ff9aa2c2f78118147a
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 13 16:06:46 2015 -0400
+
+    Friendly (Clean) URLS
+
+commit 51e6fa73ca2a9ff82e77504f658e6f647ec38476
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 13 15:48:52 2015 -0400
+
+    Updated Task View (did not integrate task markup)
+
+commit 4368feaf8a0c22acf06b36dab686effe32ba0596
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 13 12:55:01 2015 -0400
+
+    add project and task controllers and views
+
+commit 6ae4543f9e5df801c560b65b301ab09614d45750
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon May 11 22:46:17 2015 -0400
+
+    Add Paperclip
+
+commit 5a1c1fc728a7d1b02850f37cff5a617cbec40943
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon May 11 21:56:52 2015 -0400
+
+    Added Project and Task to Dashboard
+
+commit 52bf6e7b4fb29dd99240ed74853c8beb14cb671e
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon May 11 18:01:32 2015 -0400
+
+    Stylize the Active Admin Dashboard
+
+commit 49da9857a83ab8d9a0cdc4c09d002da6df1c5f0b
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon May 11 17:53:48 2015 -0400
+
+    Added Active Admin
+
+commit a878f0a8739b4df83c503f1536f85c769239176b
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Fri May 8 13:53:41 2015 -0400
+
+    Added <head> into application.html.erb, made updates to header partial.
+
+commit 19e0a2c73510e3487bcc8fb6da111de7f4c2c35c
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Thu May 7 13:42:30 2015 -0400
+
+    CSS Updates. Added background image to home page intro section. Began integration of how to use and what is it sections.
+
+commit 4fcef1fca16518de7788eaf319faecc5ddb32ce4
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Wed May 6 00:06:01 2015 -0400
+
+    Minor CSS work. Trying to get 100px padding on top if parallax image
+
+commit 267b6af024eff69ee2c5b5cf394bb92275744476
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 23:58:42 2015 -0400
+
+    Integrated Parallax into About
+
+commit 71d91cc445ff9dbfcca6fdf5bd81b00d51ad0b94
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 23:30:55 2015 -0400
+
+    Integrated Logo and began work on about page.
+
+commit b86e1695c87fae95414615d251ce1982201917f4
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 22:37:43 2015 -0400
+
+    Sticky Header :-)
+
+commit f8b03c0259b2093478210d42417bab3543dbb76a
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 22:26:49 2015 -0400
+
+    Minimized shadow on header
+
+commit cf5351b59a79054be9ead3adf15d91fff19578fd
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 21:52:11 2015 -0400
+
+    Updates to header and footer.
+
+commit c913a32b96e159ff014f31f41aa43725fb881810
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 16:51:59 2015 -0400
+
+    Updated UI. Improvements to login and new account pages, footer, and overall color theme.
+
+commit f6b1bcde0d623236b7ea4d94c973f23839f47023
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 14:25:45 2015 -0400
+
+    Added Github Integration
+
+commit a69287ab7b18616aa51a537ee6164831d7504b85
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 13:57:51 2015 -0400
+
+    Added Facebook Authentication
+
+commit 1cced39d336164d49c7a97d0fb9b4ba8b66553e4
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 13:27:37 2015 -0400
+
+    Add Google Authentication
+
+commit 71296e857f93cafaabf9054107af1d06d63b75fb
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 10:57:09 2015 -0400
+
+    Added transactional Emails with Mandrill
+
+commit 5da4442225171eb083ded88999351f68266b9caa
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Tue May 5 08:46:26 2015 -0400
+
+    added gravatar and toastr
+
+commit 2d6c497bdbe5158127deafcc320681ad84621505
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon May 4 20:05:35 2015 -0400
+
+    Add Devise user's Name and Refactor Pages.
+
+commit 3cc9567900473e925f1f1a3c5165aa319ad91c2c
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon May 4 18:36:53 2015 -0400
+
+    Add Devise Functionality
+
+commit 4c0d634d34b9497901f4088183c784e80a74d7c7
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon May 4 17:25:13 2015 -0400
+
+    Create about, privacy, and terms page. Integrate Material Design.
+
+commit 7341115aae912735ef2b9704a4e6932501f39922
+Author: Joe Minock <joe.minock@gmail.com>
+Date:   Mon May 4 11:56:32 2015 -0400
+
+    initialize Phoenix project
