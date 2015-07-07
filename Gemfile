@@ -30,6 +30,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Google Materialize SASS / CSS Framework
 gem 'materialize-sass'
 
+gem 'font-awesome-rails', '~> 4.3.0.0'
+
 # Authentication
 gem 'devise', '~> 3.4.1'
 
