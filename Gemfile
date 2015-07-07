@@ -64,6 +64,9 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 #Figaro
 gem 'figaro', '~> 1.1.1'
 
+#exception notifier
+gem 'rollbar', '~> 1.5.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
